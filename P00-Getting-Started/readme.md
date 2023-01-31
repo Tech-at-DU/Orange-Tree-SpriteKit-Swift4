@@ -1,7 +1,4 @@
----
-title: Getting Started with Orange Tree!
-slug: getting-started-with-orange-tree
----
+# Getting Started with Orange Tree!
 
 In this tutorial you will build Orange Tree -- a clone of the popular mobile game [Angry Birds](https://itunes.apple.com/us/app/ab-classic/id343200656). 
 You will use Apple's Swift programming language together with SpriteKit, their game development framework.

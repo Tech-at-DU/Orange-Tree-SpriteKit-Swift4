@@ -1,69 +1,47 @@
----
-title: Improving the Scene
-slug: improving-the-scene
----
+# Improving the Scene
 
-In this section you are going to make some improvements to the scene. After you have made some improvements,
-you are going to learn how to make a second level. Being able to create multiple levels is important
-if you want to make a game that people want to play. A single level would not be very fun if that was the
-whole game!
+In this section you are going to make some improvements to the scene. After you have made some improvements, you are going to learn how to make a second level. Being able to create multiple levels is important if you want to make a game that people want to play. A single level would not be very fun if that was the whole game!
 
 # Making Improvements
 
-Right now, if you play the game, you may have noticed that when you fling the oranges, they go **really**
-fast across the screen. You are going to fix this by dampening the vector that you created in the *Flying Fruit*
-section.
+Right now, if you play the game, you may have noticed that when you fling the oranges, they go **really** fast across the screen. You are going to fix this by dampening the vector that you created in the *Flying Fruit* section.
 
-> [action]
-> Open *GameScene.swift* and locate the *touchesEnded* function. Replace the two lines where you set `dx` and
-`dy` with the following lines:
->
-```
-// New code
-let dx = (touchStart.x - location.x) * 0.5
-let dy = (touchStart.y - location.y) * 0.5
->
-// Old code
+> [action] Open *GameScene.swift* and locate the *touchesEnded* function. Replace the two lines where you set `dx` and `dy` with the following lines:
+
+```Swift
+// Old code Replace
 let dx = touchStart.x - location.x
 let dy = touchStart.y - location.y
-```
->
 
-Run your game and you should see that the oranges now fly at a more reasonable speed. If you don't like the speed,
-feel free to tweak the number and maybe turn the speed up a bit more! The beauty of making changes like this is that
-they are very easy to tweak to the way that you want without much trouble.
+// With New code
+let dx = (touchStart.x - location.x) * 0.5
+let dy = (touchStart.y - location.y) * 0.5
+```
+
+Run your game and you should see that the oranges now fly at a more reasonable speed. If you don't like the speed, feel free to tweak the number and maybe turn the speed up a bit more! The beauty of making changes like this is that they are very easy to tweak to the way that you want without much trouble.
 
 # Wait... Where did the Oranges Go?
 
-As you were playing with your game, you may have also noticed that the oranges fly off the screen, never to be seen
-again. It would be much better if the oranges stayed within the game bounds and could maybe even bounce of the edges!
+As you were playing with your game, you may have also noticed that the oranges fly off the screen, never to be seen again. It would be much better if the oranges stayed within the game bounds and could maybe even bounce of the edges!
 
-> [action]
-> In *GameScene.swift* add a new property called `boundary` right below where you have declared your other properties
-> at the top of the file.
-```
+> [action] In *GameScene.swift* add a new property called `boundary` right below where you have declared your other properties at the top of the file.
+
+```Swift
 var boundary = SKNode()
 ```
->
+
 > Next add the following code below where you set up the *Contact Delegate* in *didMove(to:)*.
->
-```
+
+```Swift
 // Setup the boundaries
 boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
 boundary.position = .zero
 addChild(boundary)
 ```
->
 
-In the above code you are creating a new *SKNode* and then giving it a *Physics Body*. You don't create a *SKSpriteNode*
-because there is nothing visual on the screen that will be displayed. Instead, the *SKNode* acts like an empty node that
-you can give a *Physics Body*. You use the `edgeLoopFrom:` initializer to create shape that is an edge loop. If you are
-having a hard time picturing what that might be, imagine you created a rectangle and then cut everything out of the
-middle and left nothing but the edges.
+In the above code you are creating a new *SKNode* and then giving it a *Physics Body*. You don't create a *SKSpriteNode* because there is nothing visual on the screen that will be displayed. Instead, the *SKNode* acts like an empty node that you can give a *Physics Body*. You use the `edgeLoopFrom:` initializer to create shape that is an edge loop. If you are having a hard time picturing what that might be, imagine you created a rectangle and then cut everything out of the middle and left nothing but the edges.
 
-As you can see in the initializer, you are creating a reactangle that has the same size as the scene and has an *Origin*,
-or *Anchor Point* of `(0,0)`. This creates the edge loop around the edges of the screen and sets it correctly for the
-scene. Pretty nifty huh?
+As you can see in the initializer, you are creating a reactangle that has the same size as the scene and has an *Origin*, or *Anchor Point* of `(0,0)`. This creates the edge loop around the edges of the screen and sets it correctly for the scene. Pretty nifty huh?
 
 Go ahead and run your game and check out your new screen bounds!
 

@@ -95,7 +95,9 @@ The *Skull* that you just added to your level is going to be the goal for the pl
 
 To make this magic happen, first you to need to get the *Skull* ready!
 
-> [action] Click on the skull in the node heirarchy on the left hand side. Set the *Name* property to `skull` and locate the *Physics Definition*. Give the *Skull* a `Bounding Rectangle` for the *Body Type* and locate the setting called *Contact Mask* (you may need to scroll down). You want this setting to be equal to `4294967295`. The easiest way to do this is to click the down arrow next to the number. Your *Skull* is now ready to handle collisions!
+> [action] Click on the skull in the node heirarchy on the left hand side. Set the *Name* property to `skull`.
+>
+> Next locate the *Physics Definition*. Give the *Skull* a `Bounding Rectangle` for the *Body Type* and locate the setting called *Contact Mask* (you may need to scroll down). You want this setting to be equal to `4294967295`. The easiest way to do this is to click the down arrow next to the number. Your *Skull* is now ready to handle collisions!
 
 ![Skull Contact Mask](assets/skull-contact-mask.png)
 

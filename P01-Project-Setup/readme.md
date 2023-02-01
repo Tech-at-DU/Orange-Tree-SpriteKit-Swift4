@@ -17,7 +17,7 @@ In this section you are going to do some project setup in preparation for the re
 > Download the [Orange Tree assets](../assets.atlas.zip)
 > that have been created for you.
 > Once the download has finished, unpack the zip file and drag it into the project tree on the
-> lefthand side. Make sure that you have *Copy items if needed* and *Create Groups* selected.
+> lefthand side of Xcode interface. Make sure that you have *Copy items if needed* and *Create Groups* selected.
 > ![Adding assets](./assets/add_assets.png)
 > When you have finished, your project tree on the left should look like this.
 > ![Project tree](./assets/project_tree.png)

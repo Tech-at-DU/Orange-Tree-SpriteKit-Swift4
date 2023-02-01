@@ -1,20 +1,17 @@
----
-title: Setting the Scene
-slug: setting-the-scene
----
+# Setting the Scene
 
 I'm sure you are excited to start flinging oranges around, I mean who wouldn't want to fling 'em!
 Before you can do that though, you need to set up the scene and get some basic assets in place.
 
 > [action]
-> Start by removing the `Actions.sks` file.
+> Start by removing the `Actions.sks` file. Select it in the file tree and press Delete and choose move to trash. 
 
 Great! Now time to do some configuration of the scene. Orange Tree will be played in
 *landscape* mode, just like Angry Birds. You need to change a setting in our project file
 to ensure the game does not try and run in *portrait* mode by mistake.
 
 > [action]
-> Open the project file (the top one in your project tree). Go to *Deployment Info* and uncheck
+> Open the project file (the top one in your project tree). Go to the General Tab and scroll to *Deployment Info* and uncheck
 > the *portrait* setting under *Device Orientation*. Your *Deployment Info* section should now
 > look like this.
 > ![Deployment Info](./assets/deployment_info.png)
@@ -28,22 +25,23 @@ you can finish the setup.
 > Next, select the *Scene* object at the top of the object heirarchy and click
 > the *Attributes Inspector*. The default settings are set for portrait mode,
 > change that by setting the *width* to `1334` and the *height* to `750`.
-> You should also change the *Anchor Point* to `(0,0)`.
+> You should also change the *Anchor Point* to x:0, y:0.
 > ![Attributes inspector](./assets/attributes_inspector.png)
 
 # Your First Assets
 
-Right, now the scene is looking pretty boring. Luckily, you can change that pretty quickly
+Right now the scene is looking boring. Luckily, you can change that pretty quickly
 since you already have some assets that were provided for you. You are going to set up the
 background and the 'player', aka the orange tree, by placing them in the scene.
 
 > [action]
-> In the project navigator on the left, open `assets.atlas`. Look for an image named
+> In the project navigator on the left, open `Smashing-Things`. Look for an image named
 > `background.png` and drag it into the scene. Make sure that you center it inside the white
-> viewable area rectangle. It should snap into place. Check that the position is set to
-> `(667, 375)`, set the *Name* to `background`, and set the *Z Position* to `-2`. Now grab the
-> image named `Background.png` and drag it into the scene. Snap it to the bottom of the view so
-> that it is centered. Check that the position is set to `(667, 39)` and then set the *Name*
+> viewable area rectangle. It should snap into place. Check the position in the attribute inspector is set to
+> `x:0`, `y:0`, set the *Name* to `background`, and set the *`Z` Position* to `-2`. Z position arranges objects from to back. Higher numbers are in front. 
+
+> Now grab the image named `Ground.png` and drag it into the scene. Snap it to the bottom of the view so
+> that it is centered. Check that the position is set to `x:0`, `y:-336` and then set the *Name*
 > property to `ground`. If everything went well, your scene should now look like this.
 > ![Scene Background](./assets/scene_background.png)
 
@@ -73,20 +71,45 @@ your objects interact with each other? For starters, if you run the game right n
 notice that not a whole lot happens. Let's change that and see the magic of this built in
 physics engine!
 
+NOTE! When testing your project you use Device > Orientation to rotate the simulator. 
+
 > [action]
-> Open *GameScene.sks* and click on the *ground* node in the object tree. Make sure you are
+> Open *GameScene.sks* and click on the *ground* "node" in the object tree. Make sure you are
 > looking at the *Attributes Inspector* window. Locate the *Physics Definition* section, you
 > may need to scroll down, and set the *Body Type* to `Bounding Rectangle`. You may have
 > noticed a bunch of properties just became available. For now you are going to leave all the
 > settings how they are. Now, run the game using the `CMD+R` shortcut.
 
-Woah! What happened to your *ground* node? It's almost as if gravity pulled it out of the scene ;]
+Woah! What happened to your *ground* node? It's almost as if gravity pulled it out of the scene!
+
+The ground should fall down off the bottom of the screen as the gravity affects it!
 
 > [challenge]
 > Take a look at the settings for the *ground* node's physics body and see if you can figure
 > out how to prevent the node from sinking through the bottom of the scene.
 
-<!-- -->
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 > [solution]
 > The setting that you want to make sure that you turn off is called *Affected By Gravity*.
@@ -103,7 +126,7 @@ detail later in the tutorial, so don't worry if you don't understand what they m
 > Locate the *Physics Definiton* settings and uncheck *Dynamic* and *Allows Rotation*. Very
 > briefly, the *Dynamic* setting tells the physics engine whether or not this node will move
 > or whether it will be static. The *Allows Rotation* setting tells the engine whether or not
-> the node can rotate. Again, more deatil on these settings later!
+> the node can rotate. In shprt, the ground should not move when other objects hit it, and it should not rotate either! 
 >
 > Check that your *Physics Definiton* matches the picture below before moving on.
 > ![Final Physics Settings](./assets/physics_definition.png)
@@ -112,7 +135,7 @@ detail later in the tutorial, so don't worry if you don't understand what they m
 
 > [info]
 > Before we move on to the last step, I wanted to point out that there are many more settings 
-> in the *Physics Definition* than you dealt with. You are going to leave them as they are for
+> in the *Physics Definition*. You are going to leave them as they are for
 > now. If you want to find out more about them, I encourage you to do some reading in the
 > [documentation](https://developer.apple.com/documentation/spritekit) to learn more about it.
 
@@ -122,7 +145,7 @@ The last step for this section will be adding the Orange Tree!
 
 > [action]
 > Locate *OrangeTree.png* in the *assets.atlas* folder and drag it into the scene. It should
-> snap to the top of the *ground* node. It should snap into place at `(160,213)`. This looks
+> snap to the top of the *ground* node. It should snap into place at `x:-480` ,`y:-162`. This looks
 > like a perfect place for the tree! The last thing to do is set the *Z Position* to `-1` and
 > the *Name* to `tree`. Run your project and check that it looks like the image below.
 > ![Tree in Scene](./assets/added_tree.png)

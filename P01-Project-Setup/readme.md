@@ -1,7 +1,4 @@
----
-title: Project Setup
-slug: xcode-project-setup
----
+# Project Setup
 
 In this section you are going to do some project setup in preparation for the rest of the tutorial.
 
@@ -17,7 +14,7 @@ In this section you are going to do some project setup in preparation for the re
 # Import Resources for Project
 
 > [action]
-> Download the [Orange Tree assets](https://github.com/MakeSchool-Tutorials/Orange-Tree-SpriteKit-Swift4/raw/master/assets.atlas.zip)
+> Download the [Orange Tree assets](../assets.atlas.zip)
 > that have been created for you.
 > Once the download has finished, unpack the zip file and drag it into the project tree on the
 > lefthand side. Make sure that you have *Copy items if needed* and *Create Groups* selected.

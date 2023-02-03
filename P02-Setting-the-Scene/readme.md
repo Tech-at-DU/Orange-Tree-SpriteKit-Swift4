@@ -3,30 +3,22 @@
 I'm sure you are excited to start flinging oranges around, I mean who wouldn't want to fling 'em!
 Before you can do that though, you need to set up the scene and get some basic assets in place.
 
-> [action]
-> Start by removing the `Actions.sks` file. Select it in the file tree and press Delete and choose move to trash. 
+> [action] Start by removing the `Actions.sks` file. Select it in the file tree and press Delete and choose move to trash. 
 
 Great! Now time to do some configuration of the scene. Orange Tree will be played in
 *landscape* mode, just like Angry Birds. You need to change a setting in our project file
 to ensure the game does not try and run in *portrait* mode by mistake.
 
-> [action]
-> Open the project file (the top one in your project tree). Go to the General Tab and scroll to *Deployment Info* and uncheck
-> the *portrait* setting under *Device Orientation*. Your *Deployment Info* section should now
-> look like this.
-> ![Deployment Info](./assets/deployment_info.png)
+> [action] Open the project file (the top one in your project tree). Go to the General Tab and scroll to *Deployment Info* and uncheck the *portrait* setting under *Device Orientation*. Your *Deployment Info* section should now look like this.
+
+![Deployment Info](./assets/deployment_info.png)
 
 Now that your project will only run in *landscape*, open the *GameScene.sks* file so that
 you can finish the setup.
 
-> [action]
-> Open `GameScene.sks` and start by deleting the default `helloLabel` node.
-> The object tree for the *GameScene* should now be empty.
-> Next, select the *Scene* object at the top of the object heirarchy and click
-> the *Attributes Inspector*. The default settings are set for portrait mode,
-> change that by setting the *width* to `1334` and the *height* to `750`.
-> You should also change the *Anchor Point* to x:0, y:0.
-> ![Attributes inspector](./assets/attributes_inspector.png)
+> [action] Open `GameScene.sks` and start by deleting the default `helloLabel` node. The object tree for the *GameScene* should now be empty. Next, select the *Scene* object at the top of the object heirarchy and click the *Attributes Inspector*. The default settings are set for portrait mode, change that by setting the *width* to `1334` and the *height* to `750`. You should also change the *Anchor Point* to `x:0.5`, `y:0.5`.
+
+![Attributes inspector](./assets/attributes_inspector.png)
 
 # Your First Assets
 

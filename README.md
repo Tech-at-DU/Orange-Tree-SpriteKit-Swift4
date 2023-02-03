@@ -18,4 +18,5 @@ Use this repository as a starting point for your tutorial. Each tutorial must fo
 - [Flying Fruit](P03-Flying-Fruit)
 - [Level the Playing Field](P04-Level-the-Playing-Field)
 - [Improving the Scene](P05-Improving-the-Scene)
-- [Stretch Challenges](P06-Stretch-Challenges)
+- [Particle](P06-Particles)
+- [Stretch Challenges](P07-Stretch-Challenges)

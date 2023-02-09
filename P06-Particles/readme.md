@@ -14,7 +14,7 @@ Here are some examples of particle effects.
 
 SpriteKit has particles built in and it makes them very easy to use. You can even preview and edit particle effects in the Xcode IDE! 
 
-> [action] In your Xcode project create a new particle. Choose File > New. In the iOS tab choose SpriteKit Particle file. You will need to scroll down and fins this in the list. 
+> [action] In your Xcode project create a new particle. Choose File > New > File... In the iOS tab choose SpriteKit Particle file. You will need to scroll down and fins this in the list. 
 
 ![SpriteKit Particle](assets/SpriteKitParticle.png)
 
